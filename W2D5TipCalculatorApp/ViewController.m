@@ -55,30 +55,23 @@
 
 //MARK: IBActions
 
-- (IBAction)calculateTip:(id)sender {
-  float tipAmount = 0;
-  float billAmount = 0;
-  float tipPercentage = 0;
-  NSString *tipAmountWith2Decimals = @"";
-  
-  //Convert the text fields to float
-  billAmount = [self.billAmountTextField.text floatValue];
-  tipPercentage = [self.tipPercentageTextField.text floatValue];
-  
-  //String to hold tip amount with 2 decimal places
-  tipAmountWith2Decimals = [NSString stringWithFormat:@"%.2f", billAmount * (tipPercentage/100)];
-  
-  self.tipAmountLabel.text = [NSString stringWithFormat:@"%@ %@",self.currency,tipAmountWith2Decimals];
+- (IBAction)calculateTipButtonPressed:(id)sender {
+  [self calculateTip];
   
   [self textFieldShouldReturn:self.billAmountTextField];
   [self textFieldShouldReturn:self.tipPercentageTextField];
 }
 - (IBAction)tipSliderMoved:(id)sender {
+  [self calculateTip];
+  
   self.tipPercentageTextField.text = [@((int)self.tipSlider.value) stringValue];
 }
 - (IBAction)tipTextFieldValueChanged:(id)sender {
   
+  [self calculateTip];
+  
   [self.tipSlider setValue:(float)[self.tipPercentageTextField.text integerValue] animated:YES];
+  
 }
 
 //MARK:TextField Delegate
@@ -104,6 +97,22 @@
 
   //Adjust the bottom constraint to move the UIElements back
   self.bottomConstraint.constant = self.bottomConstraintConstant;
+}
+
+-(void) calculateTip{
+  float tipAmount = 0;
+  float billAmount = 0;
+  float tipPercentage = 0;
+  NSString *tipAmountWith2Decimals = @"";
+  
+  //Convert the text fields to float
+  billAmount = [self.billAmountTextField.text floatValue];
+  tipPercentage = [self.tipPercentageTextField.text floatValue];
+  
+  //String to hold tip amount with 2 decimal places
+  tipAmountWith2Decimals = [NSString stringWithFormat:@"%.2f", billAmount * (tipPercentage/100)];
+  
+  self.tipAmountLabel.text = [NSString stringWithFormat:@"%@ %@",self.currency,tipAmountWith2Decimals];
 }
 
 @end
