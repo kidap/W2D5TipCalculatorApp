@@ -18,18 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="bill amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7HJ-f8-juR" userLabel="billAmountTextField">
-                                <rect key="frame" x="10" y="92.5" width="580" height="44"/>
+                                <rect key="frame" x="10" y="93" width="580" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="OGA-vb-7YX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
-                                    <action selector="tipTextFieldValueChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ASP-9f-U3q"/>
+                                    <action selector="tipTextFieldValueChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="fec-qk-aUb"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qG6-h6-p7M">
-                                <rect key="frame" x="50" y="280.5" width="500" height="44"/>
+                                <rect key="frame" x="50" y="281" width="500" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="gDJ-fy-5I8"/>
                                 </constraints>
@@ -40,25 +40,25 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15" borderStyle="roundedRect" placeholder="tip pecentage" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Etp-Yr-mIn">
-                                <rect key="frame" x="50" y="166.5" width="500" height="44"/>
+                                <rect key="frame" x="50" y="167" width="500" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="YbU-Ic-Jqm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 <connections>
-                                    <action selector="tipTextFieldValueChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="zuT-Ju-BKG"/>
+                                    <action selector="tipTextFieldValueChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="opA-SD-SBb"/>
                                     <action selector="tipValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="x7A-i7-NwG"/>
                                 </connections>
                             </textField>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="79Y-tH-xN9">
-                                <rect key="frame" x="48" y="220.5" width="504" height="31"/>
+                                <rect key="frame" x="48" y="221" width="504" height="31"/>
                                 <connections>
                                     <action selector="tipSliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="veh-pi-Btp"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBD-IS-35v">
-                                <rect key="frame" x="10" y="30" width="580" height="32.5"/>
+                                <rect key="frame" x="10" y="30" width="580" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
